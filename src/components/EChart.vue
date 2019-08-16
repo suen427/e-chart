@@ -18,7 +18,7 @@
 <script>
 import echarts from 'echarts/lib/echarts'
 import ResizeObserver from 'resize-observer-polyfill'
-import { debounce, isVisible } from '@/utils'
+import { debounce, isVisible } from '../utils'
 
 export default {
   name: 'EChart',

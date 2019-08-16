@@ -1,29 +1,46 @@
 # e-chart
 
-## Project setup
+## install
 ```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
+npm install @sunhua/e-chart
 ```
 
-### Compiles and minifies for production
+## usage
 ```
-npm run build
+import Vue from 'vue'
+import EChart from '@sunhua/e-chart'
+
+import 'echarts'
+
+Vue.component('v-chart', ECharts)
+
 ```
 
-### Run your tests
 ```
-npm run test
+<template>
+  <div>
+    <e-chart
+      :option="chartOption"
+      height="400px"
+    />
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      chartOption: {...},
+      theme: 'default',
+    }
+  }
+}
+</script>
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Props
+* `width`
+* `height`
+* `option`
+* `theme`
+* `noDataPlaceholder`
