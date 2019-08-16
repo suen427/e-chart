@@ -1,9 +1,10 @@
 {
   "name": "@sunhua/e-chart",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "ECharts component for Vue.js.",
-  "main": "dist/e-chart.js",
-  "module": "components/EChart.vue",
+  "main": "dist/e-chart.umd.js",
+  "module": "dist/e-chart.esm.js",
+  "unpkg": "dist/e-chart.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "demo": "vue-cli-service build",
