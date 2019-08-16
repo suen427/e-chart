@@ -1,6 +1,6 @@
 {
   "name": "@sunhua/e-chart",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "ECharts component for Vue.js.",
   "main": "dist/e-chart.js",
   "module": "components/EChart.vue",
@@ -21,7 +21,6 @@
   "author": "suen427@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "core-js": "^2.6.5",
     "resize-observer-polyfill": "^1.5.1",
     "vue-echarts": "^4.0.3"
   },
