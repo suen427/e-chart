@@ -1,46 +1,44 @@
 {
   "name": "e-chart",
   "version": "0.1.0",
-  "private": true,
+  "description": "ECharts component for Vue.js.",
+  "main": "dist/e-chart.js",
+  "module": "components/EChart.vue",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "demo": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "bulid": "",
+    "publish": "sh ./publish",
   },
   "dependencies": {
     "core-js": "^2.6.5",
-    "vue": "^2.6.10"
+    "resize-observer-polyfill": "^1.5.1",
+    "vue-echarts": "^4.0.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.10.0",
     "@vue/cli-plugin-eslint": "^3.10.0",
     "@vue/cli-service": "^3.10.0",
+    "@vue/eslint-config-standard": "^4.0.0",
     "babel-eslint": "^10.0.1",
+    "echarts": "^4.2.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "raw-loader": "^3.1.0",
+    "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
   },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
+  "peerDependencies": {
+    "echarts": "^4.1.0",
+    "vue": "^2.2.6"
   },
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/suen427/e-chart"
+  }
 }
