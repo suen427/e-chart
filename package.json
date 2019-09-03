@@ -22,8 +22,7 @@
   "author": "suen427@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "resize-observer-polyfill": "^1.5.1",
-    "vue-echarts": "^4.0.3"
+    "resize-observer-polyfill": "^1.5.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.10.0",
