@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import echarts from 'echarts/lib/echarts'
+import echarts from 'echarts'
 import ResizeObserver from 'resize-observer-polyfill'
 import { debounce, isVisible } from '../utils'
 
@@ -77,7 +77,7 @@ export default {
         this.reanderChart()
       }
     },
-    realTheme () {
+    theme () {
       this.reDraw()
     }
   },
@@ -119,7 +119,7 @@ export default {
   },
   methods: {
     initChart () {
-      this.chart = echarts.init(this.$refs.chart, this.realTheme)
+      this.chart = echarts.init(this.$refs.chart, this.theme)
       this.inited = true
       this.reanderChart()
     },

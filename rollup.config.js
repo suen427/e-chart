@@ -26,12 +26,12 @@ export default CLIArgs => {
       exports: 'named',
       globals: {
         vue: 'Vue',
-        'echarts/lib/echarts': 'echarts'
+        'echarts': 'echarts'
       }
     },
     external: [
       'vue',
-      'echarts/lib/echarts'
+      'echarts'
     ]
   };
 
