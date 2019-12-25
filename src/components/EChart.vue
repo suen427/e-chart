@@ -65,7 +65,15 @@ export default {
       let datasetHaveNoData = (!option ||
           !option.dataset ||
           !Array.isArray(option.dataset.source) ||
-          option.dataset.source.length === 0)
+          option.dataset.source.length === 0 ||
+          option.dataset.source.every(row => {
+            for (let key in row) {
+              if( typeof row[key] === 'number' || !isNaN(Number(row[key]))) {
+                return false
+              }
+            }
+            return true
+          }))
 
       return !(seriesHaveNoData && datasetHaveNoData)
     }
