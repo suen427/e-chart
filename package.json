@@ -1,6 +1,6 @@
 {
   "name": "@sunhua/e-chart",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "ECharts component for Vue.js.",
   "main": "dist/e-chart.umd.js",
   "module": "dist/e-chart.esm.js",
@@ -13,7 +13,7 @@
     "build:umd": "rollup --config rollup.config.js --format umd --file dist/e-chart.umd.js",
     "build:es": "rollup --config rollup.config.js --format es --file dist/e-chart.esm.js",
     "build:unpkg": "rollup --mini --config rollup.config.js --format iife --file dist/e-chart.min.js",
-    "publish": "npm publish --access=public"
+    "publish": "npm run build:umd & npm run build:es & npm run build:unpkg & npm publish --access=public"
   },
   "keywords": [
     "ECharts",
