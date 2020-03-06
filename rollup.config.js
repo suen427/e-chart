@@ -3,6 +3,7 @@ import resolve from 'rollup-plugin-node-resolve'
 import vue from 'rollup-plugin-vue'; // Handle .vue SFC files
 const { terser } = require('rollup-plugin-terser')
 import babel from 'rollup-plugin-babel';
+import visualizer from 'rollup-plugin-visualizer'
 
 export default CLIArgs => {
   const mini = !!CLIArgs.mini;
@@ -17,6 +18,7 @@ export default CLIArgs => {
       runtimeHelpers: true,
       exclude: 'node_modules/**'
     }),
+    visualizer()
   ];
 
   let bundle = {
