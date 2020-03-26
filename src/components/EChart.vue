@@ -124,6 +124,7 @@ export default {
   },
   beforeDestroy () {
     this.resizeObserver && this.resizeObserver.disconnect()
+    this.chart && this.chart.dispose()
   },
   methods: {
     initChart () {
