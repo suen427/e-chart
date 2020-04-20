@@ -1,6 +1,6 @@
 {
   "name": "@sunhua/e-chart",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "ECharts component for Vue.js.",
   "main": "dist/e-chart.umd.js",
   "module": "dist/e-chart.esm.js",
