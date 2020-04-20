@@ -33,7 +33,8 @@ export default CLIArgs => {
     },
     external: [
       'vue',
-      'echarts'
+      'echarts',
+      'echarts/map/json/china-cities'
     ]
   };
 

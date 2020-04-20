@@ -20,6 +20,8 @@ import echarts from 'echarts'
 import ResizeObserver from 'resize-observer-polyfill'
 import { debounce, isVisible } from '../utils'
 
+let registeredMaps = {}
+
 export default {
   name: 'EChart',
   props: {
@@ -190,6 +192,11 @@ export default {
 
       let mapPromises = []
       for (let map in maps) {
+        if (registeredMaps[map]) {
+          continue
+        }
+
+        registeredMaps[map] = true
         if (map === 'china-cities') {
           mapPromises.push(import('echarts/map/json/china-cities').then(geojson => {
             echarts.registerMap('china-cities', geojson)
