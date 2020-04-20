@@ -68,7 +68,7 @@ export default {
           option.dataset.source.length === 0 ||
           option.dataset.source.every(row => {
             for (let key in row) {
-              if( typeof row[key] === 'number' || !isNaN(Number(row[key]))) {
+              if (typeof row[key] === 'number' || !isNaN(Number(row[key]))) {
                 return false
               }
             }
@@ -190,11 +190,20 @@ export default {
 
       let mapPromises = []
       for (let map in maps) {
-        mapPromises.push(import('echarts/map/js/' + mapPath[map].toLowerCase()))
+        if (map === 'china-cities') {
+          mapPromises.push(import('echarts/map/json/china-cities').then(geojson => {
+            echarts.registerMap('china-cities', geojson)
+          }))
+        } else {
+          mapPromises.push(import('echarts/map/js/' + mapPath[map].toLowerCase()))
+        }
       }
 
       Promise.all(mapPromises)
         .then(() => {
+          this.setOption(this.option, true)
+        })
+        .catch(e => {
           this.setOption(this.option, true)
         })
     },
