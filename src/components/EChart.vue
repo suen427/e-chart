@@ -212,7 +212,7 @@ export default {
           mapPromises.push(import('echarts/map/json/china-cities').then(geojson => {
             echarts.registerMap('china-cities', geojson)
           }))
-        } else {
+        } else if(mapPath[map]) {
           mapPromises.push(import('echarts/map/js/' + mapPath[map].toLowerCase()))
         }
       }
