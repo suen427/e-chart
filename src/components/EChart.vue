@@ -22,6 +22,11 @@ import { debounce, isVisible } from '../utils'
 
 let registeredMaps = {}
 
+const NUM_REGEXP = /\d+(\.\d+)?/
+function notAData (v) {
+  return !NUM_REGEXP.test(v)
+}
+
 export default {
   name: 'EChart',
   props: {
@@ -63,7 +68,13 @@ export default {
       let seriesHaveNoData = (!option ||
           !Array.isArray(option.series) ||
           option.series.length === 0 ||
-          option.series.every(item => !Array.isArray(item.data) || item.data.length === 0))
+          option.series.every(item => {
+            return (
+              !Array.isArray(item.data) ||
+              item.data.length === 0 ||
+              item.data.every(d => notAData(d.value))
+            )
+          }))
       let datasetHaveNoData = (!option ||
           !option.dataset ||
           !Array.isArray(option.dataset.source) ||
