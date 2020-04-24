@@ -72,7 +72,7 @@ export default {
             return (
               !Array.isArray(item.data) ||
               item.data.length === 0 ||
-              item.data.every(d => notAData(d.value))
+              item.data.every(d => (notAData(d) && notAData(d.value)))
             )
           }))
       let datasetHaveNoData = (!option ||
