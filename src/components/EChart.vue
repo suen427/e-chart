@@ -134,6 +134,16 @@ export default {
       this.chart.off('finished', onFinished)
     }
     this.chart.on('finished', onFinished)
+
+    // bind echarts listeners
+    Object.keys(this.$listeners).forEach(event => {
+      const handler = this.$listeners[event]
+      if (event.indexOf('zr:') === 0) {
+        this.chart.getZr().on(event.slice(3), handler)
+      } else {
+        this.chart.on(event, handler)
+      }
+    })
   },
   beforeDestroy () {
     this.resizeObserver && this.resizeObserver.disconnect()
@@ -212,7 +222,7 @@ export default {
           mapPromises.push(import('echarts/map/json/china-cities').then(geojson => {
             echarts.registerMap('china-cities', geojson)
           }))
-        } else if(mapPath[map]) {
+        } else if (mapPath[map]) {
           mapPromises.push(import('echarts/map/js/' + mapPath[map].toLowerCase()))
         }
       }
